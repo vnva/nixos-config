@@ -5,6 +5,8 @@
     enableZshIntegration = true;
     settings = {
       theme = "GitHub-Dark-Dimmed";
+      font-family = "ZedMono Nerd Font";
+      font-size = "14";
       cursor-style = "bar";
       window-padding-x = "10,10";
       window-padding-y = "10,10";
