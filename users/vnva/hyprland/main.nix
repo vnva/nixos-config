@@ -21,10 +21,11 @@ in {
     # Clipboard
     pkgs.wl-clipboard
 
-    # Screenshots
+    # Screenshots / Recording
     pkgs.slurp
     pkgs.grim
     pkgs.swappy
+    pkgs.wf-recorder
   ];
 
   xdg = {
@@ -70,6 +71,9 @@ in {
       "source" = [ "${./shared.conf}" ];
       animations = { enabled = false; }; # TODO: enable for desktop
       gestures = { workspace_swipe = true; }; # TODO: disable for desktop
+      bind = [
+        "$mod, O, exec, ${./scripts/record-screen.sh}"
+      ];
     };
   };
 

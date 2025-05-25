@@ -56,5 +56,6 @@
     (import ./git/main.nix { })
     (import ./steam/main.nix { inherit pkgs; })
     (import ./htop/main.nix { inherit config; })
+    (import ./mako/main.nix { inherit pkgs; })
   ];
 }
