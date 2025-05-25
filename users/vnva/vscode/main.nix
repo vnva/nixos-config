@@ -3,8 +3,8 @@
 {
   programs.vscode = {
     enable = true;
-    userSettings = builtins.fromJSON (builtins.readFile ./user-settings.json);
-    extensions = [
+    profiles.default.userSettings = builtins.fromJSON (builtins.readFile ./user-settings.json);
+    profiles.default.extensions = [
       # Nix
       pkgs.vscode-extensions.bbenoist.nix
       pkgs.vscode-extensions.brettm12345.nixfmt-vscode

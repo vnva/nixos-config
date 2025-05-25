@@ -12,10 +12,10 @@
       path = "$HOME/.zsh_history";
     };
     antidote = {
-      enable = false;
+      enable = true;
       plugins = [
-        #"joshskidmore/zsh-fzf-history-search kind:defer"
-        #"zdharma-continuum/fast-syntax-highlighting kind:defer"
+        "joshskidmore/zsh-fzf-history-search kind:defer"
+        "zdharma-continuum/fast-syntax-highlighting kind:defer"
       ];
     };
   };

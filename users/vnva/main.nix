@@ -1,8 +1,6 @@
 { pkgs, inputs, lib, ... }:
 
 {
-  # We need provide zsh there for default shell
-  programs.zsh.enable = true;
   security.sudo.wheelNeedsPassword = false;
   
   # ========= HYPRLAND GTK FIXES ========
@@ -31,5 +29,6 @@
     ];
     hashedPassword = "$y$j9T$oVP2/K78OhoZHCNsBf7xZ.$nU/LkYll.mJ.jy6zKQ4lxEfRcpYimmMowixES5R3G/4";
     shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
   };
 }
