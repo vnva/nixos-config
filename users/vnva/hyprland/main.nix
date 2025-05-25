@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  wallpaper = "~/wallpapers/nix-gear.png";
+  wallpaper = "${../wallpapers/nix-gear.png}";
 in {
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -62,16 +62,12 @@ in {
     platformTheme.name = "gtk";
   };
 
-  home.file.".config/shared.conf" = {
-    source = ./shared.conf;
-  };
-
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
     sourceFirst = true;
     settings = {
-      "source" = [ "~/.config/shared.conf" ];
+      "source" = [ "${./shared.conf}" ];
       animations = { enabled = false; }; # TODO: enable for desktop
       gestures = { workspace_swipe = true; }; # TODO: disable for desktop
     };

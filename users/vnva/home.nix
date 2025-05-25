@@ -26,6 +26,7 @@
     pkgs.jq
     pkgs.fzf
     pkgs.tree
+    pkgs.unzip
 
     # Apps
     pkgs.neovim
@@ -54,5 +55,6 @@
     (import ./rofi/main.nix { inherit pkgs; })
     (import ./git/main.nix { })
     (import ./steam/main.nix { inherit pkgs; })
+    (import ./htop/main.nix { inherit config; })
   ];
 }

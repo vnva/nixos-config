@@ -18,6 +18,8 @@
   "editor.fontLigatures": true,
   "terminal.integrated.fontLigatures": true,
 
+  "editor.tabSize": 2,
+
   "[json]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
