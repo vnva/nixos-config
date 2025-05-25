@@ -23,6 +23,7 @@
           "clock"
           "clock#london"
           "wireplumber"
+          "custom/mako"
           "backlight"
           "battery"
         ];
@@ -98,6 +99,13 @@
           on-scroll-up = "brightnessctl set 1+";
           on-scroll-down = "brightnessctl set 1-";
           smooth-scrolling-threshold = 1;
+        };
+
+        "custom/mako" = {
+          format = "{text} ";
+          exec = "${./scripts/mako-status.sh}";
+          on-click = "makoctl mode -t do-not-disturb";
+          return-type = "json";
         };
       }
     ];

@@ -2,6 +2,8 @@
 
 {
 
+  services.systembus-notify.enable = true;
+
   home.packages = [
     pkgs.libnotify
   ];
@@ -15,9 +17,13 @@
       border-radius = 4;
       border-size = 0;
       width = 300;
-      background-color = "	#241f31cc";
+      background-color = "#241f31cc";
       border-color = "#ffffffcc";
       padding = 8;
+
+      "mode=do-not-disturb" = {
+          invisible = 1;
+      };
     };
   };
 }

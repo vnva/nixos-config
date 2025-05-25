@@ -52,6 +52,16 @@ menu {
   padding: 0 8px;
 }
 
+#custom-mako {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#custom-mako.disabled {
+  background: @theme_selected_bg_color;
+}
+
 #tray {
   background: @theme_base_color;
   border-radius: 5px;
