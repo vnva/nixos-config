@@ -30,6 +30,7 @@
     # Apps
     pkgs.neovim
     pkgs.google-chrome
+    # pkgs.yandex-music
     pkgs.nautilus
     pkgs.telegram-desktop
     pkgs.overskride
@@ -48,5 +49,6 @@
     (import ./vscode/main.nix { inherit pkgs; })
     (import ./rofi/main.nix { inherit pkgs; })
     (import ./git/main.nix { })
+    (import ./steam/main.nix { inherit pkgs; })
   ];
 }
