@@ -1,6 +1,7 @@
 { pkgs, inputs, lib, ... }:
 
 {
+  # We need provide zsh there for default shell
   programs.zsh.enable = true;
   security.sudo.wheelNeedsPassword = false;
   
