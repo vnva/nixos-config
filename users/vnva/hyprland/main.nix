@@ -69,6 +69,8 @@
     sourceFirst = true;
     settings = {
       "source" = [ "~/.config/shared.conf" ];
+      animations = { enabled = false; }; # TODO: enable for desktop
+      gestures = { workspace_swipe = true; }; # TODO: disable for desktop
     };
   };
 

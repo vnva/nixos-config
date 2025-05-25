@@ -13,6 +13,7 @@
       resize-overlay = "never";
       confirm-close-surface = false;
       background-opacity = 0.85;
+      gtk-single-instance = true;
     };
   };
 }
