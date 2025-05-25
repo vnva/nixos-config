@@ -59,8 +59,8 @@
     platformTheme.name = "gtk";
   };
 
-  home.file.".config/hyprland-shared.conf" = {
-    source = ./hyprland-shared.conf;
+  home.file.".config/shared.conf" = {
+    source = ./shared.conf;
   };
 
   wayland.windowManager.hyprland = {
@@ -68,7 +68,7 @@
     systemd.enable = true;
     sourceFirst = true;
     settings = {
-      "source" = [ "~/.config/hyprland-shared.conf" ];
+      "source" = [ "~/.config/shared.conf" ];
     };
   };
 

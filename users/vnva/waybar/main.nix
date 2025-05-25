@@ -4,7 +4,7 @@
   programs.waybar = {
     enable = true;
     systemd.enable = true;
-    style = builtins.readFile ./waybar.css;
+    style = builtins.readFile ./style.css;
     settings = [
       {
         height = 24;

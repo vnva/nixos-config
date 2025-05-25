@@ -1,11 +1,15 @@
 {
   "$schema": "vscode://schemas/settings/user",
 
+  "window.titleBarStyle": "native",
   "workbench.sideBar.location": "right",
   "window.menuBarVisibility": "hidden",
   "editor.stickyScroll.enabled": false,
   "workbench.tree.enableStickyScroll": false,
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "chat.commandCenter.enabled": false,
 
   "editor.fontFamily": "ZedMono Nerd Font",
   "editor.fontSize": 14,

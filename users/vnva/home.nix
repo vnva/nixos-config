@@ -40,13 +40,13 @@
   ];
 
   imports = [
-    (import ./hyprland.nix { inherit pkgs; })
-    (import ./waybar.nix { })
-    (import ./ghostty.nix { })
-    (import ./shell.nix { })
-    (import ./fastfetch.nix { })
+    (import ./hyprland/main.nix { inherit pkgs; })
+    (import ./waybar/main.nix { })
+    (import ./ghostty/main.nix { })
+    (import ./shell/main.nix { })
+    (import ./fastfetch/main.nix { })
     (import ./vscode/main.nix { inherit pkgs; })
     (import ./rofi/main.nix { inherit pkgs; })
-    (import ./git.nix { })
+    (import ./git/main.nix { })
   ];
 }

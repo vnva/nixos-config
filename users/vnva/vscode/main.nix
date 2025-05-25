@@ -16,7 +16,7 @@
       # AI
       pkgs.vscode-extensions.supermaven.supermaven
 
-      # GitHub.github-vscode-theme
+      # UI
       pkgs.vscode-extensions.github.github-vscode-theme
     ];
   };
