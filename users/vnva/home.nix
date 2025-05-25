@@ -13,47 +13,31 @@
     EDITOR = "nvim";
   };
 
+  home.file."wallpapers" = {
+    source = ./wallpapers;
+    recursive = true;
+  };
+
   fonts.fontconfig.enable = true;
 
   home.packages = [
+    # CLI
     pkgs.home-manager
     pkgs.jq
     pkgs.fzf
     pkgs.tree
-    pkgs.google-chrome
+
+    # Apps
     pkgs.neovim
-    pkgs.uwsm
-    pkgs.hyprcursor
-    pkgs.rose-pine-hyprcursor
-    pkgs.rose-pine-cursor
+    pkgs.google-chrome
     pkgs.nautilus
     pkgs.telegram-desktop
-    pkgs.dconf
-    pkgs.glib
     pkgs.overskride
+
+    # Fonts
     pkgs.nerd-fonts.zed-mono
+    pkgs.inter-nerdfont
   ];
-
-  home.file = { };
-
-  programs.git = {
-    enable = true;
-    userName = "Vyacheslav Ananev";
-    userEmail = "vnva.dev@gmail.com";
-    aliases = {
-      st = "status -sb";
-      co = "checkout";
-      br = "branch";
-      lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-    };
-    extraConfig = {
-      color.ui = true;
-      github.user = "vnva";
-      push.default = "current";
-      init.defaultBranch = "main";
-      core.untrackedCache = true;
-    };
-  };
 
   programs.rofi.enable = true;
 
@@ -64,5 +48,6 @@
     (import ./shell.nix { })
     (import ./fastfetch.nix { })
     (import ./vscode/main.nix { inherit pkgs; })
+    (import ./git.nix { })
   ];
 }

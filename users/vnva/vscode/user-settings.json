@@ -22,11 +22,5 @@
   "[jsonc]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "nixfmt.path": "nix fmt",
-  "[nix]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
   }
 }

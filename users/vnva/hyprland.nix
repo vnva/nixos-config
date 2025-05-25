@@ -2,18 +2,36 @@
 {
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  home.packages = [
+    pkgs.uwsm
+
+    # Hyprland
+    pkgs.hyprcursor
+    pkgs.rose-pine-hyprcursor
+
+    # GTK
+    pkgs.gnome-themes-extra
+    pkgs.rose-pine-cursor
+    pkgs.dconf
+    pkgs.glib
+
+    # Clipboard
+    pkgs.wl-clipboard
+
+    # Screenshots
+    pkgs.slurp
+    pkgs.grim
+    pkgs.swappy
+  ];
+
   xdg = {
     enable = true;
     portal = {
       enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal-hyprland
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-gnome
-        pkgs.xdg-desktop-portal-wlr
-      ];
+      xdgOpenUsePortal = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
       config = {
-        preferred = {
+        preffered = {
           default = [ "hyprland" ];
           "org.freedesktop.impl.portal.Settings" = "gtk";
         };
@@ -30,42 +48,30 @@
 
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
-    cursorTheme = {
-      name = "BreezeX-RosePine-Linux";
-      package = pkgs.rose-pine-cursor;
-    };
   };
 
-  home.file.".config/hyprland-default.conf" = {
-    source = ./hyprland-default.conf;
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
   };
+
+  home.file.".config/hyprland-shared.conf" = {
+    source = ./hyprland-shared.conf;
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true;
     sourceFirst = true;
     settings = {
-      "source" = [ "~/.config/hyprland-default.conf" ];
+      "source" = [ "~/.config/hyprland-shared.conf" ];
     };
   };
 
-  home.file."wallpapers" = {
-    source = ./wallpapers;
-    recursive = true;
-  };
 
   services.hyprpaper = {
     enable = true;
