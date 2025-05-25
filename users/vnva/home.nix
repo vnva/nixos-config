@@ -39,8 +39,6 @@
     pkgs.inter-nerdfont
   ];
 
-  programs.rofi.enable = true;
-
   imports = [
     (import ./hyprland.nix { inherit pkgs; })
     (import ./waybar.nix { })
@@ -48,6 +46,7 @@
     (import ./shell.nix { })
     (import ./fastfetch.nix { })
     (import ./vscode/main.nix { inherit pkgs; })
+    (import ./rofi/main.nix { inherit pkgs; })
     (import ./git.nix { })
   ];
 }
