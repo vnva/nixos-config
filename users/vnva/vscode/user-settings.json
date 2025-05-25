@@ -1,0 +1,32 @@
+{
+  "$schema": "vscode://schemas/settings/user",
+
+  "workbench.sideBar.location": "right",
+  "window.menuBarVisibility": "hidden",
+  "editor.stickyScroll.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.colorTheme": "GitHub Dark",
+
+  "editor.fontFamily": "ZedMono Nerd Font",
+  "editor.fontSize": 14,
+  "terminal.integrated.fontFamily": "'ZedMono Nerd Font'",
+  "terminal.integrated.fontSize": 14,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontLigatures": true,
+
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "nixfmt.path": "nix fmt",
+  "[nix]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "brettm12345.nixfmt-vscode"
+  }
+}

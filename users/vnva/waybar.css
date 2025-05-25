@@ -1,0 +1,94 @@
+* {
+  font-family: Inter, ZedMono Nerd Font;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+window#waybar {
+  background: transparent;
+  border-radius: 5px;
+}
+
+tooltip,
+menu {
+  background: @theme_base_color;
+  border-color: @theme_base_color;
+}
+
+#workspaces {
+  background: transparent;
+  border-radius: 5px;
+}
+
+#workspaces button {
+  background: @theme_base_color;
+  padding: 0 4px;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+#workspaces button.active {
+  background: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+#clock {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#battery {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#tray {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#window {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#language {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#submap {
+  background: @warning_color;
+  color: @theme_fg_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#backlight {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}
+
+#wireplumber {
+  background: @theme_base_color;
+  border-radius: 5px;
+  padding: 0 8px;
+}

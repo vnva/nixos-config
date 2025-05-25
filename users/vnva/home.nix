@@ -1,12 +1,19 @@
 { inputs, ... }:
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
 
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  fonts.fontconfig.enable = true;
 
   home.packages = [
     pkgs.home-manager
@@ -14,9 +21,20 @@
     pkgs.fzf
     pkgs.tree
     pkgs.google-chrome
+    pkgs.neovim
+    pkgs.uwsm
+    pkgs.hyprcursor
+    pkgs.rose-pine-hyprcursor
+    pkgs.rose-pine-cursor
+    pkgs.nautilus
+    pkgs.telegram-desktop
+    pkgs.dconf
+    pkgs.glib
+    pkgs.overskride
+    pkgs.nerd-fonts.zed-mono
   ];
 
-  home.file = {};
+  home.file = { };
 
   programs.git = {
     enable = true;
@@ -37,41 +55,14 @@
     };
   };
 
-  programs.zsh = {
-    enable = true;
-    history = {
-      size = 10000;
-      save = 10000;
-      path = "$HOME/.zsh_history";
-    };
-    antidote = {
-      enable = true;
-      plugins = [
-        "joshskidmore/zsh-fzf-history-search"
-	"zdharma-continuum/fast-syntax-highlighting"
-      ];
-    };
-  };
+  programs.rofi.enable = true;
 
-  programs.carapace = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      os = {
-        disabled = false;
-	symbols = {
-	  NixOS = " ";
-	};
-      };
-    };
-  };
-
-  programs.neovim = {
-    enable = true;
-  };
+  imports = [
+    (import ./hyprland.nix { inherit pkgs; })
+    (import ./waybar.nix { })
+    (import ./ghostty.nix { })
+    (import ./shell.nix { })
+    (import ./fastfetch.nix { })
+    (import ./vscode/main.nix { inherit pkgs; })
+  ];
 }
