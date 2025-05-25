@@ -1,5 +1,8 @@
 { pkgs, ... }:
-{
+
+let
+  wallpaper = "~/wallpapers/nix-gear.png";
+in {
   home.sessionVariables.NIXOS_OZONE_WL = "1";
 
   home.packages = [
@@ -74,13 +77,12 @@
     };
   };
 
-
   services.hyprpaper = {
     enable = true;
     settings = {
       ipc = "false";
-      preload = [ "~/wallpapers/nix-gear.png" ];
-      wallpaper = [ ",~/wallpapers/nix-gear.png" ];
+      preload = [ wallpaper ];
+      wallpaper = [ ",${wallpaper}" ];
     };
   };
 }

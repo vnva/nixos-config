@@ -19,22 +19,29 @@
     firewall.enable = false;
   };
 
-  time.timeZone = "Asia/Krasnoyarks";
+  time.timeZone = "Asia/Krasnoyarsk";
 
-  services.openssh.enable = true;
-
-  programs.nix-ld.enable = true;
-
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    #jack.enable = true;
+  services = {
+    ntp.enable = true;
+    openssh.enable = true;
+    blueman.enable = true;
+    tlp = {
+      enable = true;
+      settings = {
+        START_CHARGE_THRESH_BAT0 = 60;
+        STOP_CHARGE_THRESH_BAT0 = 75;
+      };
+    };
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      #jack.enable = true;
+    };
   };
 
-  services.blueman.enable = true;
+  security.rtkit.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
