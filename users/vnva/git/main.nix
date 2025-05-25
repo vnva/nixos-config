@@ -16,6 +16,7 @@
       push.default = "current";
       init.defaultBranch = "main";
       core.untrackedCache = true;
+      core.sharedRepository = true;
     };
   };
 }
