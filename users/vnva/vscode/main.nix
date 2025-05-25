@@ -9,9 +9,10 @@
       pkgs.vscode-extensions.bbenoist.nix
       pkgs.vscode-extensions.brettm12345.nixfmt-vscode
 
-      # Prettier / ESLint
+      # JS tooling
       pkgs.vscode-extensions.esbenp.prettier-vscode
       pkgs.vscode-extensions.dbaeumer.vscode-eslint
+      pkgs.vscode-extensions.bradlc.vscode-tailwindcss
 
       # AI
       pkgs.vscode-extensions.supermaven.supermaven

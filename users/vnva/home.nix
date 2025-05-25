@@ -38,6 +38,10 @@
     # Fonts
     pkgs.nerd-fonts.zed-mono
     pkgs.inter-nerdfont
+
+    # Dev
+    pkgs.awscli2
+    pkgs.nodejs_22
   ];
 
   imports = [

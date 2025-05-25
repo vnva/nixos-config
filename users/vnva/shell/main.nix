@@ -1,6 +1,9 @@
 { }:
 
 {
+  # https://nixos.wiki/wiki/Node.js#Install_to_your_home
+  home.sessionPath = [ "$HOME/.npm-global/bin" ];
+
   programs.zsh = {
     enable = true;
     shellAliases = {
