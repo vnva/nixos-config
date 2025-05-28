@@ -21,6 +21,9 @@
   fonts.fontconfig.enable = true;
 
   home.packages = [
+    # Base
+    pkgs.xdg-utils
+
     # CLI
     pkgs.home-manager
     pkgs.jq
@@ -58,5 +61,6 @@
     (import ./steam/main.nix { inherit pkgs; })
     (import ./htop/main.nix { inherit config; })
     (import ./mako/main.nix { inherit pkgs; })
+    (import ./xdg/main.nix { })
   ];
 }
