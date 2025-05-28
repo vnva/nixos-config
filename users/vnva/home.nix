@@ -39,6 +39,7 @@
     # Fonts
     pkgs.nerd-fonts.zed-mono
     pkgs.inter-nerdfont
+    pkgs.noto-fonts-emoji-blob-bin
 
     # Dev
     pkgs.awscli2
