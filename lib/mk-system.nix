@@ -1,5 +1,5 @@
-{ nixpkgs, inputs }:
-{ system, host, rice }:
+{ nixpkgs, home-manager, disko, inputs }:
+{ system, host, rice, hostName }:
 
 nixpkgs.lib.nixosSystem {
   inherit system;
@@ -7,9 +7,12 @@ nixpkgs.lib.nixosSystem {
   modules = [ 
     { 
       nixpkgs.config.allowUnfree = true; 
+      environment.enableAllTerminfo = true;
+      networking.hostName = hostName;
     }
 
-    inputs.home-manager.nixosModules.home-manager 
+    disko.nixosModules.disko
+    home-manager.nixosModules.home-manager
 
     ../hosts/${host}
     ../rices/${rice}

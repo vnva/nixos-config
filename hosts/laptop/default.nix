@@ -14,7 +14,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
-    hostName = "vnva-laptop";
     networkmanager.enable = true;
     firewall.enable = false;
   };
