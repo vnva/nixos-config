@@ -2,11 +2,9 @@
 
 {
   security.sudo.wheelNeedsPassword = false;
-  
+
   security.polkit.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
-  services.polkit-gnome.enable = true;
-  services.gnome.gnome-keyring.enable = true;
   
   # ========= HYPRLAND GTK FIXES ========
   # https://github.com/matthewpi/nixos-config/blob/0965250feda8fa3d386cda3605cf6974b1320eb6/modules/hyprland/default.nix#L84
