@@ -6,6 +6,10 @@ nixpkgs.lib.nixosSystem {
 
   modules = [ 
     { 
+      nix.settings.experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       nixpkgs.config.allowUnfree = true; 
       environment.enableAllTerminfo = true;
       networking.hostName = hostName;

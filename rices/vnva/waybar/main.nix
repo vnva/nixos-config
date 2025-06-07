@@ -73,7 +73,7 @@
 
         "wireplumber" = {
           format = "{icon}   {volume}%";
-          format-muted = "";
+          format-muted = " ";
           on-click = "pwvucontrol";
           format-icons = [
             ""
