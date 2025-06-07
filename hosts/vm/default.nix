@@ -1,5 +1,5 @@
 {
-  imports = [ ./hardware.nix ];
+  imports = [ ./disko.nix ];
 
   system.stateVersion = "25.05";
 
