@@ -1,0 +1,1 @@
+# vnva's nixos configuration
