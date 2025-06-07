@@ -2,6 +2,8 @@
 
 {
   security.sudo.wheelNeedsPassword = false;
+  security.polkit.enable = true;
+  security.pam.services.hyprland.enableGnomeKeyring = true;
   
   # ========= HYPRLAND GTK FIXES ========
   # https://github.com/matthewpi/nixos-config/blob/0965250feda8fa3d386cda3605cf6974b1320eb6/modules/hyprland/default.nix#L84
@@ -31,4 +33,8 @@
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.vnva = import ./home.nix { inherit inputs; };
 }

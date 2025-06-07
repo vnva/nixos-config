@@ -49,6 +49,9 @@
     pkgs.nodejs_22
   ];
 
+  services.polkit-gnome.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+
   imports = [
     (import ./hyprland/main.nix { inherit pkgs; })
     (import ./waybar/main.nix { })
