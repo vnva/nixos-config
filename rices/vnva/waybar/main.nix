@@ -28,6 +28,10 @@
           "battery"
         ];
 
+        "tray" = {
+          spacing = 4;
+        };
+
         "hyprland/workspaces" = {
           format = "{icon}";
         };

@@ -38,6 +38,8 @@
     pkgs.nautilus
     pkgs.telegram-desktop
     pkgs.overskride
+    pkgs.pwvucontrol
+    pkgs.mpv
 
     # Fonts
     pkgs.nerd-fonts.zed-mono
