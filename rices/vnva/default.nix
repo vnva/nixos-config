@@ -1,7 +1,8 @@
-{ pkgs, inputs, lib, ... }:
+{ pkgs, inputs, lib, config, ... }:
+
 
 {
-  security.sudo.wheelNeedsPassword = false;
+  security.sudo.wheelNeedsPassword = true;
 
   security.polkit.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
@@ -26,11 +27,8 @@
   users.users.vnva = {
     isNormalUser = true;
     home = "/home/vnva";
-    extraGroups = [
-      "wheel"
-      "docker"
-    ];
-    hashedPassword = "$y$j9T$oVP2/K78OhoZHCNsBf7xZ.$nU/LkYll.mJ.jy6zKQ4lxEfRcpYimmMowixES5R3G/4";
+    extraGroups = [ "wheel" "docker"];
+    hashedPasswordFile = config.sops.secrets.pc-password.path;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
@@ -38,4 +36,17 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.vnva = import ./home.nix { inherit inputs; };
+
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamescope = { enable = true; capSysNice = true; };
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general = { renice = 10; };
+      custom = {
+        start = "${pkgs.libnotify}/bin/notify-send 'GameMode started'";
+        end = "${pkgs.libnotify}/bin/notify-send 'GameMode ended'";
+      };
+    };
+  };
 }

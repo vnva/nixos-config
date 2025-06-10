@@ -26,6 +26,8 @@
 
     # CLI
     pkgs.home-manager
+    pkgs.sops
+    pkgs.age
     pkgs.jq
     pkgs.fzf
     pkgs.tree
