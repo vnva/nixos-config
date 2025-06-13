@@ -25,6 +25,7 @@
     pkgs.xdg-utils
 
     # CLI
+    pkgs.nixos-anywhere
     pkgs.home-manager
     pkgs.sops
     pkgs.age
@@ -32,6 +33,9 @@
     pkgs.fzf
     pkgs.tree
     pkgs.unzip
+    pkgs.mtr
+    pkgs.wifite2
+    pkgs.nmap
 
     # Apps
     pkgs.neovim

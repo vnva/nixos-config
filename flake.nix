@@ -36,5 +36,12 @@
       system = "x86_64-linux";
       rice = "vnva";
     };
+
+    nixosConfigurations.server = mkSystem {
+      host = "server";
+      hostName = "vnva-server";
+      system = "x86_64-linux";
+      rice = "vnva-server";
+    };
   };
 }

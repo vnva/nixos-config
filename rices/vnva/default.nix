@@ -2,6 +2,8 @@
 
 
 {
+  sops.secrets.pc-password = { sopsFile = ../../secrets/personal.yaml; key = "pc-password"; };
+
   security.sudo.wheelNeedsPassword = true;
 
   security.polkit.enable = true;

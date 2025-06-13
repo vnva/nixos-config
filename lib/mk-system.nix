@@ -31,7 +31,6 @@ nixpkgs.lib.nixosSystem {
     # Sops config
     {
       sops.age.keyFile = "/home/vnva/.config/sops/age/keys.txt"; # TODO: move username to variable
-      sops.secrets.pc-password = { sopsFile = ../secrets/personal.yaml; key = "pc-password"; }; 
     }
 
     # Selected configs
